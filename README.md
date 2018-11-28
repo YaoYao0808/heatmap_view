@@ -31,8 +31,8 @@
   `  
   result.push([item.coord[0], item.coord[1],item.elevation]);  
   `  
-  `  
-  //开始获取数据  
+  `    
+  //开始获取数据    
 		$.get("../../static/js/data/data_yuan2.json", function(data) {  
 			var result = [];  
 			for(var i = 0; i < data.length; i++) {  
