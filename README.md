@@ -27,4 +27,21 @@
 3.main.js中加载的data.json文件，包含三个属性：经度，纬度，权值  
   Echarts显示热力图，是根据经度纬度的密集程度，此处并未考虑权值大小  
   颜色蓝色表示密集程度很底，红色表示密集程度较高  
+  注意：若要考虑权值大小，
+  `
+  result.push([item.coord[0], item.coord[1],item.elevation]);
+  `
+  `
+  //开始获取数据
+		$.get("../../static/js/data/data_yuan2.json", function(data) {
+			var result = [];
+			for(var i = 0; i < data.length; i++) {
+				for(var j = 0; j < data[i].length; j++) {
+					var item = data[i][j];
+					result.push([item.coord[0], item.coord[1],item.elevation]);
+				}
+			}
+			heatmap.drawChart(result);
+		}, "json");
+  `
 
